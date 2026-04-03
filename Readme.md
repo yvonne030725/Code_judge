@@ -6,11 +6,15 @@
 * **Safety**：設定 `timeout` 機制，避免程式陷入無限迴圈。
 
 ## 執行方式
+確認 Python 已安裝後，在專案根目錄執行：
 ```bash
 python judge.py
 ```
 
+執行後會自動比對所有題目並顯示判定結果。
+
 ## 專案結構
+```
 Code_judge/
 ├── judge.py                        # 主程式，負責執行比對所有題目
 ├── images/
@@ -30,7 +34,7 @@ Code_judge/
 │       ├── q3_904answer.py         # 標準答案
 │       └── q3_904_read.txt         # 題目所需的輸入資料檔
 └── README.md                       # 專案說明文件
-
+```
 ## 套件列表 (Dependencies)
 僅使用 Python 內建套件，無需額外安裝。
 - **Python** 3.10+
