@@ -2,7 +2,7 @@ l_h = []
 l_w = []
 l_people = []
 
-with open("test/q3_904_read.txt", "r", encoding="utf-8") as file:
+with open("test/q3_904/q3_904_read.txt", "r", encoding="utf-8") as file:
     for line in file:
         l = line.split(' ') #「以空格為剪刀，把一行字串切成一塊一塊的清單 (List)」
         l_h.append(float(l[1]))

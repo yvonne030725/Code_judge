@@ -1,24 +1,42 @@
-# OmniJudge: 大數據全功能判定系統 (Code Judger)
-
-這是我的自製程式碼評判工具，主要用於自動化驗證 Python 腳本的輸出結果，特別加強了對 File I/O 的支援。
-
-## 簡介 (Introduction)
-本系統專門解決手動對答案的繁瑣過程，透過 `subprocess` 模組執行程式並捕捉輸出，能快速驗證程式邏輯的正確性。
+# 判定系統 (Code Judger)
+自製程式碼評判工具，作為 `compare.bat` 的替代品，透過自動化驗證 Python 腳本的輸出結果，告別手動對答案的繁瑣過程。
 
 ## 功能 (Key Features)
-* **Dual Mode**: 支援 `text` (標準輸出) 與 `file` (外部檔案寫入) 比對。
-* **Safety**: 設定 `timeout` 機制，避免學生程式陷入死迴圈。
-* **Automation**: 自動清理測試產生的 `write.txt` 暫存檔。
+* **比對輸出**：比較兩個程式的螢幕輸出是否一致。
+* **Safety**：設定 `timeout` 機制，避免程式陷入無限迴圈。
+
+## 執行方式
+```bash
+python judge.py
+```
+
+## 專案結構
+Code_judge/
+├── judge.py                        # 主程式，負責執行比對所有題目
+├── images/
+│   └── screenshot.png                  
+├── test/
+│   ├── q1_408/                     # 第一題
+│   │   ├── q1_408correct.py        # 練習檔（正確版本）
+│   │   ├── q1_408wrong.py          # 練習檔（錯誤版本）
+│   │   └── q1_408answer.py         # 標準答案
+│   ├── q2_602/                     # 第二題
+│   │   ├── q2_602correct.py        # 練習檔（正確版本）
+│   │   ├── q2_602wrong.py          # 練習檔（錯誤版本）
+│   │   └── q2_602answer.py         # 標準答案
+│   └── q3_904/                     # 第三題（第 9 類，讀取檔案題）
+│       ├── q3_904correct.py        # 練習檔（正確版本）
+│       ├── q3_904wrong.py          # 練習檔（錯誤版本）
+│       ├── q3_904answer.py         # 標準答案
+│       └── q3_904_read.txt         # 題目所需的輸入資料檔
+└── README.md                       # 專案說明文件
 
 ## 套件列表 (Dependencies)
-- **Python** (3.10+)
-- **Subprocess** (Built-in)
-- **OS** (Built-in)
+僅使用 Python 內建套件，無需額外安裝。
+- **Python** 3.10+
+- **subprocess**（內建）
 
 ## 成果 (Demo Results)
-![Execution Screenshot](images/screenshot.png)
+![執行結果截圖](images/screenshot.png)
 
-[專案操作演示影片](你的影片連結)
-
-## 補充工具：Batch Rename Tool
-我也開發了一個批次重命名工具，用於將學生的作業檔名 **Standardize** (標準化)，以便 Judger 進行批次判定。這體現了 Data Engineering 中資料預處理 (Preprocessing) 的重要性。
+[專案操作演示影片](https://youtu.be/yMp2BNcLM78)
